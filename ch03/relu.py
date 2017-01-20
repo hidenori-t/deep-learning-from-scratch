@@ -1,4 +1,5 @@
 # coding: utf-8
+# 3.2.7 p.51
 import numpy as np
 import matplotlib.pylab as plt
 
