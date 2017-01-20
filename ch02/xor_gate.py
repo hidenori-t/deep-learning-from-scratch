@@ -1,4 +1,5 @@
 # coding: utf-8
+# 2.5.2 p.33
 from and_gate import AND
 from or_gate import OR
 from nand_gate import NAND

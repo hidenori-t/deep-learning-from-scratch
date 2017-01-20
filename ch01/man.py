@@ -1,4 +1,5 @@
 # coding: utf-8
+# 1.4.2 クラス pp.10-116
 class Man:
     """サンプルクラス"""
 
@@ -12,6 +13,6 @@ class Man:
     def goodbye(self):
         print("Good-bye " + self.name + "!")
 
-m = Man("David")
+m = Man("David") # Man クラスから m というインスタンス(オブジェクト)を生成
 m.hello()
 m.goodbye()
