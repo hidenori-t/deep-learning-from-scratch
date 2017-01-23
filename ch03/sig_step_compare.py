@@ -1,10 +1,11 @@
 # coding: utf-8
+# 3.2.5 (p.49)
 import numpy as np
 import matplotlib.pylab as plt
 
 
 def sigmoid(x):
-    return 1 / (1 + np.exp(-x))    
+    return 1 / (1 + np.exp(-x))
 
 
 def step_function(x):
