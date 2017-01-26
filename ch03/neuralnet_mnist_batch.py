@@ -1,4 +1,5 @@
 # coding: utf-8
+# 3.6.3 p.80
 import sys, os
 sys.path.append(os.pardir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
@@ -39,9 +40,9 @@ batch_size = 100 # バッチの数
 accuracy_cnt = 0
 
 for i in range(0, len(x), batch_size):
-    x_batch = x[i:i+batch_size]
+    x_batch = x[i:i+batch_size] # 入力データからバッチを抜き出す
     y_batch = predict(network, x_batch)
     p = np.argmax(y_batch, axis=1)
-    accuracy_cnt += np.sum(p == t[i:i+batch_size])
+    accuracy_cnt += np.sum(p == t[i:i+batch_size]) # True/False からなるブーリアン配列を作成し，True の個数を算出
 
 print("Accuracy:" + str(float(accuracy_cnt) / len(x)))

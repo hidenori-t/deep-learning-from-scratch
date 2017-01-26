@@ -39,7 +39,7 @@ accuracy_cnt = 0
 for i in range(len(x)): # len(x)=10000枚
     y = predict(network, x[i]) # 分類
     p = np.argmax(y) # 最も確率の高い要素のインデックスを取得し，予測結果とする
-    if p == t[i]:
+    if p == t[i]: # 予測した答えと正解ラベルとを比較
         accuracy_cnt += 1
 
 print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
