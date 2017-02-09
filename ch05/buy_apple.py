@@ -1,4 +1,5 @@
 # coding: utf-8
+# p.138
 from layer_naive import *
 
 
@@ -10,8 +11,8 @@ mul_apple_layer = MulLayer()
 mul_tax_layer = MulLayer()
 
 # forward
-apple_price = mul_apple_layer.forward(apple, apple_num)
-price = mul_tax_layer.forward(apple_price, tax)
+apple_price = mul_apple_layer.forward(apple, apple_num) # 200
+price = mul_tax_layer.forward(apple_price, tax) # 220
 
 # backward
 dprice = 1

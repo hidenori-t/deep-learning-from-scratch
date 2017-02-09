@@ -16,7 +16,7 @@ class TwoLayerNet: # 2層ニューラルネットワークを実装
         self.params['W2'] = weight_init_std * np.random.randn(hidden_size, output_size)
         self.params['b2'] = np.zeros(output_size) # output_size の数の0の1次元配列
 
-    def predict(self, x): # 認識(推論)を行う methodを定義
+    def predict(self, x): # 認識(推論)を行う methodを定義 cf.p.76, p.65
         W1, W2 = self.params['W1'], self.params['W2']
         b1, b2 = self.params['b1'], self.params['b2']
 
@@ -31,7 +31,7 @@ class TwoLayerNet: # 2層ニューラルネットワークを実装
     def loss(self, x, t): # 損失関数を求める methodを定義
         y = self.predict(x)
 
-        return cross_entropy_error(y, t)
+        return cross_entropy_error(y, t) # cf.p.94
 
     def accuracy(self, x, t): # 認識精度を求める methodを定義
         y = self.predict(x)
@@ -42,8 +42,8 @@ class TwoLayerNet: # 2層ニューラルネットワークを実装
         return accuracy
 
     # x:入力データ, t:教師データ
-    def numerical_gradient(self, x, t): # 重みパラメータに対する勾配を求める method を定義
-        loss_W = lambda W: self.loss(x, t) # loss_W を定義
+    def numerical_gradient(self, x, t): # 重みパラメータに対する勾配を求める method を定義 cf.p.104
+        loss_W = lambda W: self.loss(x, t) # loss_W を定義 cf.p.112
 
         grads = {}
         grads['W1'] = numerical_gradient(loss_W, self.params['W1'])
